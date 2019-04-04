@@ -25,7 +25,7 @@ The user guide corresponding to this version of the framework can be found
 
 ## Installation & updates
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
+`composer create-project codeigniter4/appstarter -s beta` then `composer update` whenever
 there is a new release of the framework.
 
 ## Setup
