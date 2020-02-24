@@ -1,4 +1,5 @@
-<?php namespace Tests\Support\Events;
+<?php
+
 
 /**
  * CodeIgniter
@@ -7,7 +8,8 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014-2018 British Columbia Institute of Technology
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ * Copyright (c) 2019-2020 CodeIgniter Foundation
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,38 +31,25 @@
  *
  * @package    CodeIgniter
  * @author     CodeIgniter Dev Team
- * @copyright  2014-2018 British Columbia Institute of Technology (https://bcit.ca/)
+ * @copyright  2019-2020 CodeIgniter Foundation
  * @license    https://opensource.org/licenses/MIT	MIT License
  * @link       https://codeigniter.com
  * @since      Version 4.0.0
  * @filesource
  */
 
-use CodeIgniter\Events\Events;
+namespace Tests\Support\Libraries;
 
 /**
- * Events
+ * Class ConfigReader
+ *
+ * An extension of BaseConfig that prevents the constructor from
+ * loading external values. Used to read actual local values from
+ * a config file.
  */
-class MockEvents extends Events
+class ConfigReader extends \Config\App
 {
-
-	public function getListeners()
+	public function __construct()
 	{
-		return self::$listeners;
-	}
-
-	public function getEventsFile()
-	{
-		return self::$eventsFile;
-	}
-
-	public function getSimulate()
-	{
-		return self::$simulate;
-	}
-
-	public function unInitialize()
-	{
-		static::$initialized = false;
 	}
 }
