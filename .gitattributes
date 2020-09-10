@@ -1,0 +1,5 @@
+* text=auto
+
+/.github export-ignore
+.gitattributes export-ignore
+builds export-ignore
