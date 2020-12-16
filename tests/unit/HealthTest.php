@@ -21,12 +21,12 @@ class HealthTest extends \CodeIgniter\Test\CIUnitTestCase
 		// First check in .env
 		if (is_file(HOMEPATH . '.env'))
 		{
-			$env = (bool) preg_grep("/^app\.baseURL = './", file(HOMEPATH . '.env'));
+			$env = (bool) preg_grep("/^app\.baseURL = './", file(HOMEPATH . 'env'));
 		}
 
 		// Then check the actual config file
 		$reader = new \Tests\Support\Libraries\ConfigReader();
-		$config = ! empty($reader->baseUrl);
+		$config = ! empty($reader->baseURL);
 
 		$this->assertTrue($env || $config);
 	}
